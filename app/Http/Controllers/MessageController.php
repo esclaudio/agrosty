@@ -35,11 +35,9 @@ class MessageController extends Controller
     {
         $message = Message::create($request->validated());
 
-        Mail::to('info@agrosty.test')->send(new MessageReceivedMail($message));
+        // Mail::to('info@agrosty.test')->send(new MessageReceivedMail($message));
 
-        return redirect()
-            ->route('welcome')
-            ->with('success', 'Su mensaje fue enviado');
+        return $message;
     }
 
     public function report()
