@@ -19,10 +19,9 @@ class Captcha
             return strtolower(trim($word));
         }, explode(' ', $this->content));
 
+        $totalScore = 0;
 
         foreach ($this->dict as $key => $score) {
-            $totalScore = 0;
-
             foreach ($words as $word) {
                 if ($word === strtolower($key)) {
                     $totalScore += $score;
