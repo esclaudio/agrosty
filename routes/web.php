@@ -32,6 +32,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/messages/report', [MessageController::class, 'report'])->name('messages.report');
 });
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
